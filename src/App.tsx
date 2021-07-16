@@ -10,7 +10,6 @@ import { selectError } from './redux/selectors';
 import Layout from './containers/Layout';
 
 
-
 function App() {
 
   useGeolocation();

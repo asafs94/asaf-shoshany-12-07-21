@@ -6,7 +6,7 @@ import { ApiMapItem, Params } from './types';
 
 class AccWeatherApi implements WeatherApi {
 
-  private url = "http://dataservice.accuweather.com";
+  private url = "https://dataservice.accuweather.com";
   private apiKey: string;
 
   constructor(apiKey: string) {
