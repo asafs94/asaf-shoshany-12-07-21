@@ -1,5 +1,6 @@
 
 
+import { Typography } from '@material-ui/core';
 import { useEffect } from 'react';
 import { FC } from 'react'
 import { ActionMeta, FocusEventHandler, OptionTypeBase } from 'react-select';
@@ -44,6 +45,9 @@ const AutoCompleteInput = ({ onChange, onLoadOptions, visible, onBlur, focus }: 
 
       }}
       onBlur={onBlur}
+      formatOptionLabel={option =>
+        <Typography>{option.generalInfo.localizedName} <Typography variant="caption" color="textSecondary">{option.generalInfo.country.localizedName}</Typography></Typography>
+      }
       getOptionLabel={option => option.generalInfo.localizedName}
       getOptionValue={option => option.key}
       onChange={onSelectChange}
