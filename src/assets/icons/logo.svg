@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92.238" height="20" viewBox="0 0 92.238 20">
+  <g id="Group_12" data-name="Group 12" transform="translate(-9.762 -11)">
+    <g id="icon" transform="translate(9.762 12.415)">
+      <path id="Path_112" data-name="Path 112" d="M27.1,95.073h-.108a7.4,7.4,0,0,0-13.121-4.206,5.687,5.687,0,0,0-8.155,2.36H5.261a5.262,5.262,0,0,0,0,10.524H27.1a4.339,4.339,0,0,0,4.339-4.339h0A4.339,4.339,0,0,0,27.1,95.073Z" transform="translate(0 -88.144)" fill="#00d3ef"/>
+      <path id="Path_113" data-name="Path 113" d="M48.328,95.073H48.22a7.395,7.395,0,0,0-9.3-6.677,6.908,6.908,0,0,1,5.053,6.212h.1a4.048,4.048,0,0,1,4.048,4.048h0a4.048,4.048,0,0,1-4.048,4.048H23.708c-.13,0-.257-.009-.384-.02a5.233,5.233,0,0,0,3.167,1.067H48.328a4.339,4.339,0,0,0,4.339-4.339h0A4.339,4.339,0,0,0,48.328,95.073Z" transform="translate(-21.23 -88.144)" fill="#00b9d1"/>
+    </g>
+    <text id="Weather" transform="translate(42 26)" fill="#fff" font-size="14" font-family="Poppins-Regular, Poppins"><tspan x="0" y="0">Weather</tspan></text>
+  </g>
+</svg>

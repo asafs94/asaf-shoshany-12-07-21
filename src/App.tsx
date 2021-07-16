@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import { useSelector } from 'react-redux';
+import { Route, Switch } from 'react-router';
+import useStorageFavorites from './hooks/favorites.hook';
+import { useGeolocation } from './hooks/geolocation.hook';
+import useWeatherTheme from './hooks/weather-theme.hook';
+import Favorites from './pages/Favorites/Favorites';
+import Main from './pages/Main/Main';
+import { selectError } from './redux/selectors';
+import Layout from './containers/Layout';
+
+
 
 function App() {
+
+  useGeolocation();
+  useStorageFavorites()
+  useWeatherTheme(0)
+
+  const error = useSelector(selectError);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout error={error}>
+      <Switch>
+        <Route path="/favorites" component={Favorites} />
+        <Route exact path="/" component={Main} />
+      </Switch>
+    </Layout>
   );
 }
 
