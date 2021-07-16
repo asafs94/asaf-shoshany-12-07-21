@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => {
       cursor: 'pointer'
     },
     Logo: {
-      width: 'clamp(5rem, 25vw, 8.125rem)',
+      width: 'clamp(5.5rem, 25vw, 8.125rem)',
       height: 'auto',
       gridArea: 'logo'
     },

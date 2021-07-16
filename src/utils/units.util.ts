@@ -12,6 +12,6 @@ export const toCelsius = (degreeFarenheit: number) => {
 
 
 export const formatTemperature = (degreeCelsius: number, unit: TemperatureUnit) => {
-  if (unit === "°F") return `${toFarenheit(degreeCelsius)}${unit} `;
+  if (unit === "°F") return `${toFarenheit(degreeCelsius).toFixed(1)}${unit} `;
   return `${degreeCelsius}${unit}`;
 }

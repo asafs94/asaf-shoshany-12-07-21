@@ -24,6 +24,12 @@ const useStyles = makeStyles((theme) => {
       overflow: 'auto',
       flex: 1,
     },
+    UnitSwitch: {
+      display: 'flex',
+      textTransform: 'capitalize',
+      alignItems: 'center',
+      marginLeft: '0.5rem'
+    },
   }
 })
 

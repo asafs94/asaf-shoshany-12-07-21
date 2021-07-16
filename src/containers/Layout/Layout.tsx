@@ -1,8 +1,11 @@
 
-import { List, ListItem, useMediaQuery } from "@material-ui/core";
-import { FC, PropsWithChildren, useEffect } from "react";
+import { FormControlLabel, List, ListItem, Switch, Typography, useMediaQuery } from "@material-ui/core";
+import { ToggleButton } from "@material-ui/lab";
+import { FC, PropsWithChildren, useContext, useEffect } from "react";
 import ErrorDialog from "../../components/ErrorDialog";
 import Link from "../../components/Link";
+import { UnitType } from "../../constants/preferences.constants";
+import UserPreferencesContext from "../../contexts/user-preferences/user-preferences.context";
 import { isTouchEnabled } from "../../utils";
 import Drawer from "../Drawer";
 import Header from "../Header";
@@ -30,12 +33,21 @@ const Layout: FC<Props> = ({ children, error }) => {
   const classes = useStyles();
   const narrowScreen = useMediaQuery(`screen and (max-width: ${MaxWidthToShowNavs}px)`); // for touch screens
   const isTouch = isTouchEnabled();
-
+  const { preferences, actions } = useContext(UserPreferencesContext)
   const navigationType = getNavigationType(narrowScreen, isTouch)
+
+  const onSwitchChange = (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
+    actions.setUnits(checked ? UnitType.Imperial : UnitType.Metric)
+  }
 
   return (
     <div className={classes.Root}>
       <Header showNav={navigationType === "Header"} />
+      <FormControlLabel
+        className={classes.UnitSwitch}
+        control={<Switch color="default" size="small" checked={preferences.units === UnitType.Imperial} onChange={onSwitchChange} />}
+        label={<Typography variant="caption" htmlFor="unit-switch" component="label">{preferences.units}</Typography>}
+      />
       <main className={classes.Main}>
         {children}
       </main>
